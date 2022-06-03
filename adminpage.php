@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<?php
+session_start(); 
+if($_SESSION["is_admin_login"]!=true)
+{
+	 header('Location: Mainpage.php'); exit; 
+}
+?>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		.hero__section{
+			background: rgba(53,73,150,255);
+			color: #FFFFFF;
+			padding: 90px 0px;
+		}
+	</style>
+</head>
+<body>
+	<div style="height:70px;width: 100%;position:fixed;background-color:white">
+		<table class="table table-borderless" style="margin-left:100px;margin-right:150px; width:200px">
+			<tr>
+				<td>
+					<img src="logo.png" style="height:30px"/>
+				</td>
+				<td class="nav-item" style="font-size:20;padding-left:180px;color:#cc0066">
+    				<a class="nav-link active" aria-current="page" href="adminpage.php">Dashboard</a>
+				</td>  
+  				<td class="nav-item" style="font-size:20">
+   				 	<a class="nav-link active" aria-current="page" href="admincourses.php">Courses</a>
+  				</td>
+  				<td class="nav-item" style="font-size:20">
+    				<a class="nav-link active" aria-current="page" href="adminlessons.php">Lessons</a>
+  				</td>
+  				<td class="nav-item" style="font-size:20">
+    				<a class="nav-link active" aria-current="page" href="adminstudents.php">Students</a>
+  				</td>
+				<td class="nav-item" style="font-size:20">
+    				<a class="nav-link active" aria-current="page" href="adminfeedback.php">Feedback</a>
+  				</td>
+				<td class="nav-item" style="font-size:20">
+    				<a class="nav-link active" aria-current="page" href="adminaccount.php">Account</a>
+  				</td>
+				
+  				<td class="nav-item" style="padding-left:200px;padding right:50px">
+  					<form method="GET" class="d-inline"><button class="btn btn-primary btn-lg active" name="logout">LogOut</button></form>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+<?php
+if(isset($_GET['logout']))
+{
+	session_destroy();
+	header('Location: Mainpage.php');
+}
+?>
+	<div class="hero__section">
+		<h2 class="text-center" >Dashboard</h2>
+		</div>
+		<table>
+		<tr>
+		
+				<div class="col-sm-9 mt-5" >
+					<div class="row mx-5 text-center">
+						<div class="col-sm-4 mt-5">
+							<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+							<div class="card-header">Courses</div>
+							<div class="card-body">
+							<h4 class="card-title">5</h4>
+							<a class="btn text-white" href="#">View</a>
+							</div>
+							</div>
+							</div>
+							
+												
+					
+						<div class="col-sm-4 mt-5">
+							<div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+							<div class="card-header">Students</div>
+							<div class="card-body">
+							<h4 class="card-title">5</h4>
+							<a class="btn text-white" href="#">View</a>
+							</div>
+							</div>
+							</div>						 
+				
+						<div class="col-sm-4 mt-5">
+							<div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+							<div class="card-header">Sold</div>
+							<div class="card-body">
+							<h4 class="card-title">5</h4>
+							<a class="btn text-white" href="#">View</a>
+							</div>
+							</div>
+							</div>							
+						</div>
+						</div>
+						
+		<!--courses ordered-->
+<div class="mx-5 mt-5 text-center">
+<!--table-->
+<p class="bg-dark text-white p-2">Courses Orderes</p>
+<table class="table">
+<tr>
+<th scope="col"> Order ID </th>
+<th scope="col"> Course ID </th>
+<th scope="col"> Student Email </th>
+<th scope="col"> Order date </th>
+<th scope="col"> Amount </th>
+<th scope="col"> Action </th>
+</tr>
+<tr>
+<th scope="row">22</th>
+<td>100</td>
+<td>nabila@gmail.com</td>
+<td>20/10/2020</td>
+<td>2000</td>
+<td><button type="submit" class="btn btn-secondary" name="delete" value="Delete"><i class="fa fa-trash"></i></td>
+</tr>
+
+		
+						
+	</div>
+
+
+</body>
+</html>

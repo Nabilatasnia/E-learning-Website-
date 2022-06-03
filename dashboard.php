@@ -1,0 +1,86 @@
+<?php
+session_start(); 
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<style>
+		.navbar__section{
+			font-size: 20px;
+		}
+		.hero__section{
+			background: rgba(53,73,150,255);
+			color: #FFFFFF;
+			padding: 90px 0px;
+		}
+		.profile__image{
+			/*border: 1px solid black;*/
+			padding-top: 100px;
+
+		}
+		.profile__image img{
+			border-radius: 90%;
+
+		}
+		.course__section{
+			display: flex;
+			gap: 20px;
+			flex-wrap: wrap;
+		}
+		*{
+			
+		}
+
+	</style>
+</head>
+<body>
+	<div style="height:70px;width: 100%;position:fixed;background-color:white">
+		<table class="table table-borderless" style="margin-left:100px;margin-right:150px; width:200px">
+			<tr>
+				<td>
+					<img src="logo.png" style="height:30px"/>
+				</td>
+				<td class="nav-item" style="font-size:20;padding-left:300px;color:#cc0066">
+    				<a class="nav-link active" aria-current="page" href="dashboard.php">Home</a>
+				</td>  
+  				<td class="nav-item" style="font-size:20">
+   				 	<a class="nav-link active" aria-current="page" href="courses.php">Courses</a>
+  				</td>
+  				<td class="nav-item" style="font-size:20">
+    				<a class="nav-link active" aria-current="page" href="#programs">Programs</a>
+  				</td>
+  				<td class="nav-item" style="font-size:20">
+    				<a class="nav-link active" aria-current="page" href="account.php">Account</a>
+  				</td>
+  				
+			</tr>
+		</table>
+
+	</div>
+	<div class="hero__section">
+		<h2 class="text-center" >Dashboard</h2> 
+	</div>
+	<div class="profile__section text-center" style="padding-top:50px">
+		
+		<h4>Welcome <?php echo $_SESSION['Username'];?></h4> 
+			
+	</div>
+	<h3 class="my-4 container">Your Courses</h3>
+	<div class="container">
+		
+  			
+    			<form class="d-flex my-3">
+      				<input class="form-control me-4" type="search" placeholder="Search" aria-label="Search">
+      				<button class="btn btn-outline-success" type="submit">Search</button>
+    			</form>
+  			
+		
+	</div>
+
+	
+</body>
+</html>
